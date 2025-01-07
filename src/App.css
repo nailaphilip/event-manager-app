@@ -1,0 +1,117 @@
+html, body {
+  height: 100%; /* Ensure the body and html take up full height */
+  margin: 0;
+}
+
+.home-page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensure the container takes at least the full viewport height */
+  background-image: url("./assets/team-sitting-desk-checking-reports-talking-top-view.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.container {
+  flex: 1; 
+  max-width: 80%;
+  margin: 150px auto;
+  padding: 10px;
+}
+
+.footer {
+  background-color: #f8f9fa;
+  text-align: center;
+  padding: 2rem 0; 
+  font-size: 1rem; 
+  color: #6c757d;
+  border-top: 1px solid #e9ecef;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li a {
+  color: rgb(47, 45, 45);
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.nav-links li a:hover {
+  color: #ffcc00;
+}
+
+.hero-banner {
+  height: 300px;
+  /* background-image: url("./assets/team-sitting-desk-checking-reports-talking-top-view.jpg");
+  background-size: cover;
+  background-position: center; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.hero-banner h1 {
+  color: rgb(122, 114, 114);
+  font-size: 5rem;
+  text-align: center;
+  margin:0;
+}
+
+.card-container {
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  flex-wrap: wrap; 
+  margin: 30px auto; 
+  max-width: 100%; 
+  gap: 20px;
+}
+
+.card {
+  background-size: cover;
+  background-position: center;
+  background-color: rgb(107, 104, 104);
+  height: 200px;
+  width: 250px;
+  margin: 15px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  color: #fff;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+  transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+.card a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.card h2 {
+  font-size: 2rem;
+  margin: 10px 0;
+}
+
+.card p {
+  font-size: 1.2rem;
+  text-align: center;
+}
