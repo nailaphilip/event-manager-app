@@ -7,7 +7,7 @@ import "./EventPage.css";
 function EventPage() {
   const params = useParams();
   const navigate = useNavigate();
-  const [data, setData] = useState({}); // Change to object instead of array
+  const [data, setData] = useState({}); 
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
@@ -15,7 +15,7 @@ function EventPage() {
     fetch(`http://localhost:3001/events/${params.id}`)
       .then((response) => response.json())
       .then((data) => setData(data))
-      .finally(() => setIsLoading(false)); // Ensure loading state is updated in both success and error cases
+      .finally(() => setIsLoading(false)); 
   }, [params.id]);
 
   if (isLoading) {
@@ -28,7 +28,7 @@ function EventPage() {
         {data.photo && (
           <img
             className="event-photo"
-            src={`http://localhost:3001/${data.photo}`} // Prepend base URL to the photo path
+            src={`http://localhost:3001/${data.photo}`}
             alt={data.title}
           />
         )}

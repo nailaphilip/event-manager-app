@@ -16,25 +16,22 @@ function AddEvent() {
   const [position, setPosition] = useState(null);
   const [transport, setTransport] = useState("");
   const [duration, setDuration] = useState("");
-  const [photo, setPhoto] = useState(null); // Uploaded photo file
-  const [photoPreview, setPhotoPreview] = useState(null); // Photo preview URL
+  const [photo, setPhoto] = useState(null); 
+  const [photoPreview, setPhotoPreview] = useState(null); 
 
-  // Handle photo upload
   const handlePhotoUpload = (event) => {
     const file = event.target.files[0];
     if (file) {
-      setPhoto(file); // Store the file
-      setPhotoPreview(URL.createObjectURL(file)); // Generate a preview URL
+      setPhoto(file); 
+      setPhotoPreview(URL.createObjectURL(file)); 
     }
   };
 
-  // Handle form submission
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
       let photoUrl = "";
 
-      // Upload the photo
       if (photo) {
         const formData = new FormData();
         formData.append("photo", photo);
@@ -44,11 +41,10 @@ function AddEvent() {
           headers: { "Content-Type": "multipart/form-data" },
         });
 
-        photoUrl = uploadResponse.data.fileUrl; // Get the uploaded photo's URL
+        photoUrl = uploadResponse.data.fileUrl;
         console.log("Photo uploaded successfully:", photoUrl);
       }
 
-      // Add event data to db.json
       console.log("Submitting event data...");
       const response = await axios.post("http://localhost:3001/events", {
         title,
@@ -58,13 +54,12 @@ function AddEvent() {
         duration,
         location,
         transport,
-        photo: photoUrl, // Save the photo URL
+        photo: photoUrl,
       });
 
       alert("Event has been added successfully.");
       console.log("Event added:", response.data);
 
-      // Reset form fields
       setTitle("");
       setInfo("");
       setDate(null);
@@ -80,7 +75,6 @@ function AddEvent() {
     }
   };
 
-  // Handle location changes with geocoding
   const handleLocationChange = async (e) => {
     const locationName = e.target.value;
     setLocation(locationName);
@@ -108,7 +102,6 @@ function AddEvent() {
     }
   };
 
-  // Component to handle map clicks
   const MapClickHandler = () => {
     useMapEvents({
       async click(e) {
@@ -205,7 +198,6 @@ function AddEvent() {
             />
           </div>
 
-          {/* Map */}
           <MapContainer
             center={position || [51.505, -0.09]} // Default center
             zoom={13}
@@ -233,7 +225,6 @@ function AddEvent() {
             />
           </div>
 
-          {/* Photo Upload */}
           <div>
             <label htmlFor="photo">Upload Photo:</label>
             <input type="file" id="photo" accept="image/*" onChange={handlePhotoUpload} />
