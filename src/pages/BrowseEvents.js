@@ -11,7 +11,7 @@ function BrowseEvents() {
 
   useEffect(() => {
     setIsLoading(true);
-    fetch("http://localhost:3001/events")
+    fetch("https://event-manager-app-json-server.onrender.com/events")
       .then((response) => response.json())
       .then((data) => setEvents(data))
       .finally(() => setIsLoading(false));
