@@ -37,6 +37,6 @@ server.post("/upload", upload.single("photo"), (req, res) => {
 
 server.use(router);
 
-server.listen(3001, () => {
+server.listen(process.env.PORT, () => {
   console.log("JSON Server is running on port 3001");
 });

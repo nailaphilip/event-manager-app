@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/static/css/main.b0219d1b.css",
+    "main.js": "/static/js/main.30e1d1ab.js",
+    "static/media/team-sitting-desk-checking-reports-talking-top-view.jpg": "/static/media/team-sitting-desk-checking-reports-talking-top-view.ac93d3297864cef76f55.jpg",
+    "index.html": "/index.html",
+    "main.b0219d1b.css.map": "/static/css/main.b0219d1b.css.map",
+    "main.30e1d1ab.js.map": "/static/js/main.30e1d1ab.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b0219d1b.css",
+    "static/js/main.30e1d1ab.js"
+  ]
+}
