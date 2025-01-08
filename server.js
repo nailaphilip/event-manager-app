@@ -35,6 +35,9 @@ server.post("/upload", upload.single("photo"), (req, res) => {
   }
 });
 
+const cors = require("cors");
+server.use(cors());
+
 server.use(router);
 
 server.listen(process.env.PORT || 3001, () => {
