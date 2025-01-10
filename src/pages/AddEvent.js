@@ -37,7 +37,7 @@ function AddEvent() {
         formData.append("photo", photo);
 
         console.log("Uploading photo...");
-        const uploadResponse = await axios.post("http://localhost:3001/upload", formData, {
+        const uploadResponse = await axios.post("https://event-manager-app-json-server.onrender.com/upload", formData, {
           headers: { "Content-Type": "multipart/form-data" },
         });
 
@@ -46,7 +46,7 @@ function AddEvent() {
       }
 
       console.log("Submitting event data...");
-      const response = await axios.post("http://localhost:3001/events", {
+      const response = await axios.post("https://event-manager-app-json-server.onrender.com/events", {
         title,
         info,
         date: date?.toISOString().split("T")[0],
