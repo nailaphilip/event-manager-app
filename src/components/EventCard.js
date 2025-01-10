@@ -9,7 +9,7 @@ function EventCard({ event }) {
       {event.photo && (
         <img
           className="event-photo"
-          src={`https://event-manager-app-json-server.onrender.com/uploads/${event.photo}`}
+          src={`https://event-manager-app-json-server.onrender.com/${event.photo}`}
           alt={event.title || "Event"}
         />
       )}

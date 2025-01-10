@@ -34,7 +34,7 @@ function EventPage() {
         {data.photo && (
           <img
             className="event-photo"
-            src={`https://event-manager-app-json-server.onrender.com/uploads/${data.photo}`}
+            src={`https://event-manager-app-json-server.onrender.com/${data.photo}`}
             alt={data.title || "Event"}
           />
         )}
