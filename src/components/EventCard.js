@@ -6,15 +6,16 @@ import "./EventCard.css";
 function EventCard({ event }) {
   return (
     <div className="event-card">
-
-      <img
-        className="event-photo"
-        src={`https://event-manager-app-json-server.onrender.com/${event.photo}`} 
-        alt={event.title} 
-      />
+      {event.photo && (
+        <img
+          className="event-photo"
+          src={`https://event-manager-app-json-server.onrender.com/uploads/${event.photo}`}
+          alt={event.title || "Event"}
+        />
+      )}
       <div className="event-card-content">
-        <h2>{event.title}</h2>
-        <p>{event.info}</p>
+        <h2>{event.title || "Title unavailable"}</h2>
+        <p>{event.info || "Information not available"}</p>
         <Link to={`/events/${event.id}`} className="event-link">
           View Event
         </Link>
@@ -24,4 +25,3 @@ function EventCard({ event }) {
 }
 
 export default EventCard;
-
