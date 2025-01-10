@@ -12,7 +12,7 @@ function EventPage() {
 
   useEffect(() => {
     setIsLoading(true);
-    fetch(`http://localhost:3001/events/${params.id}`)
+    fetch(`https://event-manager-app-json-server.onrender.com/${params.id}`)
       .then((response) => response.json())
       .then((data) => setData(data))
       .finally(() => setIsLoading(false)); 
@@ -28,7 +28,7 @@ function EventPage() {
         {data.photo && (
           <img
             className="event-photo"
-            src={`http://localhost:3001/${data.photo}`}
+            src={`https://event-manager-app-json-server.onrender.com/${data.photo}`}
             alt={data.title}
           />
         )}
